@@ -1,63 +1,57 @@
-import { Button } from "@/components/ui/button";
+<!DOCTYPE html><html>
+<head>
+  <title>QWALITY SCREEN PRINTING</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {margin:0; font-family: Arial; background:black; color:white; text-align:center;}
+    header {padding:60px; background:linear-gradient(black, #111);}
+    h1 {color:#00ff88; font-size:40px;}
+    section {padding:40px;}
+    .card {
+      border:1px solid #00ff88;
+      margin:10px;
+      padding:20px;
+      border-radius:10px;
+    }
+    .btn {
+      display:inline-block;
+      padding:10px 20px;
+      margin-top:10px;
+      background:#00ff88;
+      color:black;
+      text-decoration:none;
+      border-radius:5px;
+    }
+    .float {
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#00ff88;
+      color:black;
+      padding:15px;
+      border-radius:50%;
+    }
+  </style>
+</head>
+<body><header>
+  <h1>QWALITY SCREEN PRINTING</h1>
+  <p>Get your dreams on paper</p>
+  <a class="btn" href="https://wa.me/919826707560">WhatsApp Now</a>
+</header><section>
+  <h2 style="color:#00ff88;">Our Services</h2>  <div class="card">
+    <h3>Banners</h3>
+    <a class="btn" href="https://wa.me/919826707560?text=I want banner printing">Order Now</a>
+  </div>  <div class="card">
+    <h3>Visiting Cards</h3>
+    <a class="btn" href="https://wa.me/919826707560?text=I want visiting cards">Order Now</a>
+  </div>  <div class="card">
+    <h3>Stickers</h3>
+    <a class="btn" href="https://wa.me/919826707560?text=I want stickers">Order Now</a>
+  </div></section><section>
+  <h2 style="color:#00ff88;">Contact</h2>
+  <p>📞 9826707560</p>
+  <p>📍 Sadar Bazar, Raipur</p>
+</section><a class="float" href="https://wa.me/919826707560">💬</a>
 
-export default function Website() { return ( <div className="font-sans bg-black text-white"> {/* Hero Section */} <section className="text-center py-20 bg-gradient-to-b from-black to-gray-900"> <h1 className="text-4xl md:text-6xl font-bold mb-4 text-green-400"> QWALITY SCREEN PRINTING </h1> <p className="text-xl mb-6">Get your dreams on paper</p> <a
-href="https://wa.me/919826707560?text=Hi%20I%20want%20to%20place%20an%20order"
-target="_blank"
-> <Button className="bg-green-500 hover:bg-green-600 text-black"> WhatsApp Now </Button> </a> </section>
-
-{/* Services */}
-  <section className="p-10">
-    <h2 className="text-3xl text-center mb-8 text-green-400">
-      Our Services
-    </h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {[
-        "Banners",
-        "Visiting Cards",
-        "Stickers",
-        "Calendars",
-        "Bill Books",
-        "Catalogues",
-      ].map((service) => (
-        <div
-          key={service}
-          className="p-6 border border-green-500 rounded-2xl shadow-lg hover:scale-105 transition"
-        >
-          <h3 className="text-xl font-bold mb-4">{service}</h3>
-          <a
-            href={`https://wa.me/919826707560?text=Hi%20I%20want%20${service}`}
-            target="_blank"
-          >
-            <Button className="bg-green-500 text-black">
-              Order Now
-            </Button>
-          </a>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  {/* Gallery Placeholder */}
-  <section className="p-10 text-center bg-gray-900">
-    <h2 className="text-3xl mb-4 text-green-400">Our Work</h2>
-    <p>Add your design images here to attract customers</p>
-  </section>
-
-  {/* Contact */}
-  <section className="p-10 text-center">
-    <h2 className="text-3xl mb-4 text-green-400">Contact</h2>
-    <p>📞 9826707560</p>
-    <p>📍 Sadar Bazar, Raipur</p>
-  </section>
-
-  {/* Floating WhatsApp Button */}
-  <a
-    href="https://wa.me/919826707560"
-    className="fixed bottom-5 right-5 bg-green-500 text-black px-4 py-3 rounded-full shadow-lg"
-    target="_blank"
-  >
-    Chat
-  </a>
-</div>
-
-); }
+</body>
+</html>
