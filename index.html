@@ -247,29 +247,113 @@ Our Services
 </div>
 </section>
 
-<section id="gallery">
+ <section id="gallery">
 
 <h2 class="title">
 Our Work
 </h2>
 
-<div class="gallery">
+<div style="text-align:center; margin-bottom:30px;">
+
+<button class="filter-btn" onclick="showGallery('cards')">Visiting Cards</button>
+
+<button class="filter-btn" onclick="showGallery('banners')">Banners</button>
+
+<button class="filter-btn" onclick="showGallery('stickers')">Stickers</button>
+
+<button class="filter-btn" onclick="showGallery('catalogues')">Catalogues</button>
+
+<button class="filter-btn" onclick="showGallery('calendars')">Calendars</button>
+
+<button class="filter-btn" onclick="showGallery('billbooks')">Bill Books</button>
+
+</div>
+
+<div class="gallery" id="cards">
 
 <img src="https://picsum.photos/500/350?1">
-
 <img src="https://picsum.photos/500/350?2">
-
 <img src="https://picsum.photos/500/350?3">
 
+</div>
+
+<div class="gallery" id="banners" style="display:none;">
+
 <img src="https://picsum.photos/500/350?4">
-
 <img src="https://picsum.photos/500/350?5">
-
 <img src="https://picsum.photos/500/350?6">
 
 </div>
 
+<div class="gallery" id="stickers" style="display:none;">
+
+<img src="https://picsum.photos/500/350?7">
+<img src="https://picsum.photos/500/350?8">
+<img src="https://picsum.photos/500/350?9">
+
+</div>
+
+<div class="gallery" id="catalogues" style="display:none;">
+
+<img src="https://picsum.photos/500/350?10">
+<img src="https://picsum.photos/500/350?11">
+<img src="https://picsum.photos/500/350?12">
+
+</div>
+
+<div class="gallery" id="calendars" style="display:none;">
+
+<img src="https://picsum.photos/500/350?13">
+<img src="https://picsum.photos/500/350?14">
+<img src="https://picsum.photos/500/350?15">
+
+</div>
+
+<div class="gallery" id="billbooks" style="display:none;">
+
+<img src="https://picsum.photos/500/350?16">
+<img src="https://picsum.photos/500/350?17">
+<img src="https://picsum.photos/500/350?18">
+
+</div>
+
 </section>
+
+<style>
+
+.filter-btn{
+background:linear-gradient(45deg,#00ffcc,#00aaff);
+border:none;
+padding:12px 20px;
+margin:8px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.filter-btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #00ffcc;
+}
+
+</style>
+
+<script>
+
+function showGallery(type){
+
+const galleries=document.querySelectorAll('.gallery');
+
+galleries.forEach(gallery=>{
+gallery.style.display='none';
+});
+
+document.getElementById(type).style.display='grid';
+
+}
+
+</script>
 
 <section id="contact">
 
