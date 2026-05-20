@@ -3,229 +3,243 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>QWALITY SCREEN PRINTING</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 background:#050816;
-color:white;
-overflow-x:hidden;
+color:#f8fafc;
 }
+
+/* TOPBAR */
 
 nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
-background:#0b0b0b;
-border-bottom:1px solid #00ffcc33;
+padding:20px 8%;
+background:#0f172a;
 position:sticky;
 top:0;
 z-index:1000;
+border-bottom:1px solid #7c3aed44;
 }
 
 nav h1{
-color:#00ffcc;
-font-size:24px;
+font-size:28px;
+color:#7c3aed;
+text-shadow:0 0 15px #7c3aed88;
 }
 
-nav a{
-color:white;
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
 text-decoration:none;
-margin:0 10px;
+color:white;
+font-weight:bold;
 transition:0.3s;
 }
 
-nav a:hover{
-color:#00ffcc;
+nav ul li a:hover{
+color:#06b6d4;
 }
 
+/* HERO */
+
 .hero{
-padding:100px 20px;
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
-background:linear-gradient(to bottom,#000,#071520);
+padding:20px;
+background:linear-gradient(to bottom,#050816,#0f172a);
 }
 
 .hero h2{
-font-size:55px;
-color:#00ffcc;
-text-shadow:0 0 20px #00ffcc88;
+font-size:65px;
+color:#7c3aed;
+text-shadow:0 0 25px #7c3aed88;
 }
 
 .hero p{
-margin-top:15px;
+margin-top:20px;
 font-size:20px;
-color:#ccc;
+max-width:700px;
+color:#94a3b8;
+line-height:1.6;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:14px 28px;
-background:linear-gradient(45deg,#00ffcc,#00aaff);
-color:black;
-font-weight:bold;
-border-radius:10px;
+margin-top:30px;
+padding:15px 35px;
+border-radius:12px;
 text-decoration:none;
+font-weight:bold;
+background:linear-gradient(45deg,#7c3aed,#06b6d4);
+color:white;
 transition:0.3s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 20px #00ffcc;
+box-shadow:0 0 20px #facc15;
 }
 
-section{
-padding:70px 20px;
-}
-
-.title{
-text-align:center;
-font-size:38px;
-margin-bottom:40px;
-color:#00ffcc;
-text-shadow:0 0 15px #00ffcc55;
-}
+/* SERVICES */
 
 .services{
+padding:80px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:45px;
+margin-bottom:50px;
+color:#7c3aed;
+}
+
+.service-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:25px;
 }
 
 .card{
-background:#101010;
-border:1px solid #00ffcc33;
-padding:25px;
+background:#0f172a;
+padding:30px;
 border-radius:20px;
+border:1px solid #7c3aed33;
 transition:0.3s;
-text-align:center;
 }
 
 .card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px #00ffcc33;
+transform:translateY(-8px);
+box-shadow:0 0 25px #06b6d444;
 }
 
 .card h3{
 margin-bottom:15px;
-color:#00ffcc;
+font-size:28px;
+color:#06b6d4;
 }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.card p{
+color:#94a3b8;
+line-height:1.6;
 }
 
-.gallery img{
-width:100%;
-border-radius:20px;
-transition:0.3s;
-border:2px solid #00ffcc33;
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-box-shadow:0 0 25px #00aaff;
-}
+/* CONTACT */
 
 .contact{
+padding:80px 8%;
 text-align:center;
-line-height:2;
-font-size:18px;
+background:#0f172a;
+margin-top:50px;
 }
+
+.contact h2{
+font-size:45px;
+margin-bottom:20px;
+color:#7c3aed;
+}
+
+.contact p{
+font-size:18px;
+color:#94a3b8;
+margin-bottom:20px;
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:20px;
-border-top:1px solid #00ffcc33;
-color:#888;
+padding:25px;
+background:#050816;
+border-top:1px solid #7c3aed33;
+color:#94a3b8;
 }
+
+/* WHATSAPP */
 
 .float{
 position:fixed;
 bottom:20px;
 right:20px;
-background:linear-gradient(45deg,#00ffcc,#00aaff);
-color:black;
+background:linear-gradient(45deg,#7c3aed,#06b6d4);
+color:white;
 padding:18px;
 border-radius:50%;
 font-size:24px;
 text-decoration:none;
-box-shadow:0 0 20px #00ffcc;
+box-shadow:0 0 20px #7c3aed;
+z-index:1000;
 }
 
-@media(max-width:768px){
-
-.hero h2{
-font-size:38px;
-}
-
-nav{
-flex-direction:column;
-gap:10px;
-}
-
-}
 </style>
 </head>
 
 <body>
 
-<nav>
-<h1>QWALITY SCREEN PRINTING</h1>
+<!-- NAVBAR -->
 
-<div>
-<a href="#">Home</a>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</div>
+<nav>
+
+<h1>QWALITY</h1>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
 </nav>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<h2>GET YOUR DREAMS ON PAPER</h2>
+<h2>QWALITY SCREEN PRINTING</h2>
 
 <p>
-Premium Printing Solutions For Your Business
+Professional Graphic Designing & Printing Solutions
+for businesses, brands and events.
 </p>
 
 <a class="btn"
-href="https://wa.me/919826707560?text=Hi%20QWALITY%20SCREEN%20PRINTING%2C%20I%20want%20to%20place%20an%20order.">
-WhatsApp Now
-</a>."
+href="https://wa.me/919826707560?text=Hi%20I%20want%20printing%20services">
+Contact On WhatsApp
+</a>
 
 </section>
 
-<section id="services">
+<!-- SERVICES -->
 
-<h2 class="title">
-Our Services
+<section class="services" id="services">
+
+<h2 class="section-title">
+OUR SERVICES
 </h2>
 
-<div class="card">
+<div class="service-grid">
 
-<h3>Banners</h3>
-
-<p>
-High quality flex and vinyl banner printing.
-</p>
-
-<a class="btn"
-href="banners.html">
-View Gallery
-</a>
-
-</div>
+<!-- VISITING CARD -->
 
 <div class="card">
 
@@ -242,6 +256,25 @@ View Gallery
 
 </div>
 
+<!-- BANNERS -->
+
+<div class="card">
+
+<h3>Banners</h3>
+
+<p>
+High quality flex and vinyl banner printing.
+</p>
+
+<a class="btn"
+href="banners.html">
+View Gallery
+</a>
+
+</div>
+
+<!-- STICKERS -->
+
 <div class="card">
 
 <h3>Stickers</h3>
@@ -256,6 +289,8 @@ View Gallery
 </a>
 
 </div>
+
+<!-- CALENDARS -->
 
 <div class="card">
 
@@ -272,6 +307,8 @@ View Gallery
 
 </div>
 
+<!-- BILL BOOKS -->
+
 <div class="card">
 
 <h3>Bill Books</h3>
@@ -286,6 +323,8 @@ View Gallery
 </a>
 
 </div>
+
+<!-- CATALOGUES -->
 
 <div class="card">
 
@@ -303,141 +342,45 @@ View Gallery
 </div>
 
 </div>
-</section>
-
- <section id="gallery">
-
-<h2 class="title">
-Our Work
-</h2>
-
-<div style="text-align:center; margin-bottom:30px;">
-
-<button class="filter-btn" onclick="showGallery('cards')">Visiting Cards</button>
-
-<button class="filter-btn" onclick="showGallery('banners')">Banners</button>
-
-<button class="filter-btn" onclick="showGallery('stickers')">Stickers</button>
-
-<button class="filter-btn" onclick="showGallery('catalogues')">Catalogues</button>
-
-<button class="filter-btn" onclick="showGallery('calendars')">Calendars</button>
-
-<button class="filter-btn" onclick="showGallery('billbooks')">Bill Books</button>
-
-</div>
-
-<div class="gallery" id="cards">
-
-<img src="https://picsum.photos/500/350?1">
-<img src="https://picsum.photos/500/350?2">
-<img src="https://picsum.photos/500/350?3">
-
-</div>
-
-<div class="gallery" id="banners" style="display:none;">
-
-<img src="https://picsum.photos/500/350?4">
-<img src="https://picsum.photos/500/350?5">
-<img src="https://picsum.photos/500/350?6">
-
-</div>
-
-<div class="gallery" id="stickers" style="display:none;">
-
-<img src="https://picsum.photos/500/350?7">
-<img src="https://picsum.photos/500/350?8">
-<img src="https://picsum.photos/500/350?9">
-
-</div>
-
-<div class="gallery" id="catalogues" style="display:none;">
-
-<img src="https://picsum.photos/500/350?10">
-<img src="https://picsum.photos/500/350?11">
-<img src="https://picsum.photos/500/350?12">
-
-</div>
-
-<div class="gallery" id="calendars" style="display:none;">
-
-<img src="https://picsum.photos/500/350?13">
-<img src="https://picsum.photos/500/350?14">
-<img src="https://picsum.photos/500/350?15">
-
-</div>
-
-<div class="gallery" id="billbooks" style="display:none;">
-
-<img src="https://picsum.photos/500/350?16">
-<img src="https://picsum.photos/500/350?17">
-<img src="https://picsum.photos/500/350?18">
-
-</div>
 
 </section>
 
-<style>
+<!-- CONTACT -->
 
-.filter-btn{
-background:linear-gradient(45deg,#00ffcc,#00aaff);
-border:none;
-padding:12px 20px;
-margin:8px;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
-transition:0.3s;
-}
+<section class="contact" id="contact">
 
-.filter-btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 15px #00ffcc;
-}
+<h2>CONTACT US</h2>
 
-</style>
+<p>
+Sadar Bazar, Raipur
+</p>
 
-<script>
+<p>
+Mobile: 9826707560
+</p>
 
-function showGallery(type){
-
-const galleries=document.querySelectorAll('.gallery');
-
-galleries.forEach(gallery=>{
-gallery.style.display='none';
-});
-
-document.getElementById(type).style.display='grid';
-
-}
-
-</script>
-
-<section id="contact">
-
-<h2 class="title">
-Contact Us
-</h2>
-
-<div class="contact">
-
-<p>📞 9826707560</p>
-
-<p>📍 Sadar Bazar, Raipur</p>
-
-<p>QWALITY SCREEN PRINTING</p>
-
-</div>
+<a class="btn"
+href="https://wa.me/919826707560?text=Hi%20I%20want%20printing%20services">
+Chat On WhatsApp
+</a>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
+
 © 2026 QWALITY SCREEN PRINTING
+
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+
 <a class="float"
-href="https://wa.me/919826707560">
+href="https://wa.me/919826707560?text=Hi%20I%20want%20printing%20services">
+
 💬
+
 </a>
 
 </body>
