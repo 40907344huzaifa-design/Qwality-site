@@ -102,4 +102,205 @@ text-align:center;
 }
 
 .section-title{
-font-size
+font-size:45px;
+margin-bottom:50px;
+color:#00b894;
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card h3{
+font-size:28px;
+margin-bottom:15px;
+color:#0984e3;
+}
+
+.card p{
+color:#64748b;
+line-height:1.6;
+}
+
+/* CONTACT */
+
+.contact{
+padding:80px 20px;
+text-align:center;
+background:white;
+margin-top:60px;
+}
+
+.contact h2{
+font-size:45px;
+margin-bottom:20px;
+color:#00b894;
+}
+
+.contact p{
+font-size:18px;
+color:#64748b;
+margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+background:white;
+margin-top:40px;
+color:#64748b;
+}
+
+/* FLOAT BUTTON */
+
+.float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:linear-gradient(45deg,#00b894,#0984e3);
+color:white;
+padding:18px;
+border-radius:50%;
+font-size:24px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<h1>QWALITY</h1>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h2>QWALITY SCREEN PRINTING</h2>
+
+<p>
+Professional Graphic Designing & Printing Solutions
+for businesses, brands and events.
+</p>
+
+<a class="btn"
+href="https://wa.me/919826707560?text=Hi%20I%20want%20printing%20services">
+Contact On WhatsApp
+</a>
+
+</section>
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<h2 class="section-title">
+OUR SERVICES
+</h2>
+
+<div class="service-grid">
+
+<div class="card">
+<h3>Visiting Cards</h3>
+<p>Premium business cards with modern finishing.</p>
+<a class="btn" href="visiting-cards.html">View Gallery</a>
+</div>
+
+<div class="card">
+<h3>Banners</h3>
+<p>High quality flex and vinyl banner printing.</p>
+<a class="btn" href="banners.html">View Gallery</a>
+</div>
+
+<div class="card">
+<h3>Stickers</h3>
+<p>Custom stickers with vibrant printing quality.</p>
+<a class="btn" href="stickers.html">View Gallery</a>
+</div>
+
+<div class="card">
+<h3>Calendars</h3>
+<p>Professional calendar printing for businesses.</p>
+<a class="btn" href="calendars.html">View Gallery</a>
+</div>
+
+<div class="card">
+<h3>Bill Books</h3>
+<p>Durable and clean invoice printing solutions.</p>
+<a class="btn" href="billbooks.html">View Gallery</a>
+</div>
+
+<div class="card">
+<h3>Catalogues</h3>
+<p>Modern catalogue printing with attractive layouts.</p>
+<a class="btn" href="catalogues.html">View Gallery</a>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<h2>CONTACT US</h2>
+
+<p>Sadar Bazar, Raipur</p>
+
+<p>Mobile: 9826707560</p>
+
+<a class="btn"
+href="https://wa.me/919826707560?text=Hi%20I%20want%20printing%20services">
+Chat On WhatsApp
+</a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+© 2026 QWALITY SCREEN PRINTING
+</footer>
+
+<!-- FLOAT BUTTON -->
+
+<a class="float"
+href="https://wa.me/919826707560?text=Hi%20I%20want%20printing%20services">
+
+💬
+
+</a>
+
+</body>
+</html>
