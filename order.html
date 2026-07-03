@@ -155,30 +155,26 @@ color:#666;
 
 function sendOrder(){
 
-let name=document.getElementById("name").value;
-let mobile=document.getElementById("mobile").value;
-let email=document.getElementById("email").value;
-let service=document.getElementById("service").value;
-let qty=document.getElementById("qty").value;
-let size=document.getElementById("size").value;
-let material=document.getElementById("material").value;
-let address=document.getElementById("address").value;
-let note=document.getElementById("note").value;
+const name = document.getElementById("name").value;
+const mobile = document.getElementById("mobile").value;
+const email = document.getElementById("email").value;
+const service = document.getElementById("service").value;
+const qty = document.getElementById("qty").value;
+const size = document.getElementById("size").value;
+const material = document.getElementById("material").value;
+const address = document.getElementById("address").value;
+const note = document.getElementById("note").value;
 
-let msg=`🟢 *NEW PRINT ORDER*
+const message =
+`🟢 *NEW PRINT ORDER*
 
 👤 Name: ${name}
-
 📱 Mobile: ${mobile}
-
 📧 Email: ${email}
 
 🖨️ Service: ${service}
-
 🔢 Quantity: ${qty}
-
 📏 Size: ${size}
-
 📄 Material: ${material}
 
 📍 Address:
@@ -187,7 +183,11 @@ ${address}
 📝 Instructions:
 ${note}`;
 
-window.open("https://wa.me/919826707560?text="+encodeURIComponent(msg),"_blank");
+const url = "https://wa.me/919826707560?text=" + encodeURIComponent(message);
+
+window.open(url, "_blank");
+
+}
 
 }
 
