@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Place Order | QWALITY SCREEN PRINTING</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f7fb;
+color:#333;
+}
+
+header{
+background:#00b894;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+.container{
+max-width:700px;
+margin:40px auto;
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:25px;
+color:#00b894;
+}
+
+label{
+display:block;
+margin-top:15px;
+font-weight:bold;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin-top:6px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+textarea{
+resize:vertical;
+height:100px;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:25px;
+background:#00b894;
+color:white;
+border:none;
+border-radius:10px;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#00997a;
+}
+
+.home{
+display:block;
+text-align:center;
+margin-top:20px;
+text-decoration:none;
+color:#0984e3;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#666;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>QWALITY SCREEN PRINTING</h1>
+<p>Place Your Order</p>
+</header>
+
+<div class="container">
+
+<h2>Order Form</h2>
+
+<label>Full Name</label>
+<input type="text" id="name">
+
+<label>Mobile Number</label>
+<input type="tel" id="mobile">
+
+<label>Email (Optional)</label>
+<input type="email" id="email">
+
+<label>Select Service</label>
+<select id="service">
+<option>Visiting Cards</option>
+<option>Banners</option>
+<option>Stickers</option>
+<option>Calendars</option>
+<option>Bill Books</option>
+<option>Catalogues</option>
+<option>Flex Printing</option>
+<option>Other</option>
+</select>
+
+<label>Quantity</label>
+<input type="number" id="qty">
+
+<label>Size</label>
+<input type="text" id="size" placeholder="Example: A4 / 3.5 x 2 inch">
+
+<label>Paper / Material</label>
+<input type="text" id="material">
+
+<label>Delivery Address</label>
+<textarea id="address"></textarea>
+
+<label>Additional Instructions</label>
+<textarea id="note"></textarea>
+
+<button onclick="sendOrder()">Place Order on WhatsApp</button>
+
+<a class="home" href="index.html">⬅ Back to Home</a>
+
+</div>
+
+<footer>
+© 2026 QWALITY SCREEN PRINTING
+</footer>
+
+<script>
+
+function sendOrder(){
+
+let name=document.getElementById("name").value;
+let mobile=document.getElementById("mobile").value;
+let email=document.getElementById("email").value;
+let service=document.getElementById("service").value;
+let qty=document.getElementById("qty").value;
+let size=document.getElementById("size").value;
+let material=document.getElementById("material").value;
+let address=document.getElementById("address").value;
+let note=document.getElementById("note").value;
+
+let msg=`🟢 *NEW PRINT ORDER*
+
+👤 Name: ${name}
+
+📱 Mobile: ${mobile}
+
+📧 Email: ${email}
+
+🖨️ Service: ${service}
+
+🔢 Quantity: ${qty}
+
+📏 Size: ${size}
+
+📄 Material: ${material}
+
+📍 Address:
+${address}
+
+📝 Instructions:
+${note}`;
+
+window.open("https://wa.me/919826707560?text="+encodeURIComponent(msg),"_blank");
+
+}
+
+</script>
+
+</body>
+</html>
