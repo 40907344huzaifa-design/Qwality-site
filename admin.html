@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>QWALITY Admin Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#eef7fb;
+}
+
+header{
+background:linear-gradient(135deg,#00b894,#00a8ff);
+color:white;
+padding:25px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+header h1{
+font-size:34px;
+}
+
+.container{
+
+width:95%;
+max-width:1200px;
+margin:30px auto;
+
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.card h3{
+
+color:#00a8ff;
+margin-bottom:10px;
+
+}
+
+.number{
+
+font-size:38px;
+font-weight:bold;
+color:#00b894;
+
+}
+
+.tableCard{
+
+margin-top:35px;
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+
+}
+
+th{
+
+background:#00b894;
+color:white;
+padding:14px;
+
+}
+
+td{
+
+padding:14px;
+border-bottom:1px solid #eee;
+text-align:center;
+
+}
+
+.pending{
+
+color:#ff9800;
+font-weight:bold;
+
+}
+
+.completed{
+
+color:#00b894;
+font-weight:bold;
+
+}
+
+.cancelled{
+
+color:red;
+font-weight:bold;
+
+}
+
+.topButtons{
+
+display:flex;
+gap:15px;
+margin-bottom:25px;
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:12px 20px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+background:#00a8ff;
+font-weight:bold;
+
+}
+
+.home{
+
+background:#00b894;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>QWALITY ADMIN PANEL</h1>
+
+<p>Printing Management Dashboard</p>
+
+</header>
+
+<div class="container">
+
+<div class="topButtons">
+
+<a class="btn home" href="index.html">
+🏠 Home
+</a>
+
+<a class="btn" href="order.html">
+📋 New Order
+</a>
+
+</div>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Total Orders</h3>
+
+<div class="number" id="orders">
+0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Total Customers</h3>
+
+<div class="number" id="customers">
+0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Pending Orders</h3>
+
+<div class="number" id="pending">
+0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Completed Orders</h3>
+
+<div class="number" id="completed">
+0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Cancelled Orders</h3>
+
+<div class="number" id="cancelled">
+0
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Today's Orders</h3>
+
+<div class="number" id="today">
+0
+</div>
+
+</div>
+
+</div>
+<div class="tableCard">
+
+<h2 style="margin-bottom:20px;color:#00a8ff;">
+📋 Recent Orders
+</h2>
+
+<table>
+
+<tr>
+
+<th>Order ID</th>
+
+<th>Customer</th>
+
+<th>Service</th>
+
+<th>Status</th>
+
+<th>Amount</th>
+
+</tr>
+
+<tr>
+
+<td>QSP001</td>
+
+<td>Mustafa</td>
+
+<td>Visiting Cards</td>
+
+<td class="pending">Pending</td>
+
+<td>₹550</td>
+
+</tr>
+
+<tr>
+
+<td>QSP002</td>
+
+<td>Ali</td>
+
+<td>Banner</td>
+
+<td class="completed">Completed</td>
+
+<td>₹1200</td>
+
+</tr>
+
+<tr>
+
+<td>QSP003</td>
+
+<td>Saif</td>
+
+<td>Sticker</td>
+
+<td class="completed">Completed</td>
+
+<td>₹450</td>
+
+</tr>
+
+<tr>
+
+<td>QSP004</td>
+
+<td>Burhani Traders</td>
+
+<td>Bill Book</td>
+
+<td class="pending">Pending</td>
+
+<td>₹850</td>
+
+</tr>
+
+<tr>
+
+<td>QSP005</td>
+
+<td>Royal Hardware</td>
+
+<td>Calendar</td>
+
+<td class="cancelled">Cancelled</td>
+
+<td>₹650</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<div class="tableCard">
+
+<h2 style="margin-bottom:20px;color:#00a8ff;">
+📊 Printing Statistics
+</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>Visiting Cards</h3>
+
+<div class="number">45</div>
+
+</div>
+
+<div class="card">
+
+<h3>Banners</h3>
+
+<div class="number">18</div>
+
+</div>
+
+<div class="card">
+
+<h3>Stickers</h3>
+
+<div class="number">24</div>
+
+</div>
+
+<div class="card">
+
+<h3>Bill Books</h3>
+
+<div class="number">12</div>
+
+</div>
+
+<div class="card">
+
+<h3>Calendars</h3>
+
+<div class="number">9</div>
+
+</div>
+
+<div class="card">
+
+<h3>Catalogues</h3>
+
+<div class="number">6</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="tableCard">
+
+<h2 style="margin-bottom:20px;color:#00a8ff;">
+📈 Monthly Revenue
+</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>January</h3>
+<div class="number">₹12,500</div>
+</div>
+
+<div class="card">
+<h3>February</h3>
+<div class="number">₹18,200</div>
+</div>
+
+<div class="card">
+<h3>March</h3>
+<div class="number">₹21,400</div>
+</div>
+
+<div class="card">
+<h3>April</h3>
+<div class="number">₹16,850</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="tableCard">
+
+<h2 style="margin-bottom:20px;color:#00a8ff;">
+⚡ Quick Actions
+</h2>
+
+<div class="topButtons">
+
+<a class="btn" href="order.html">
+➕ New Order
+</a>
+
+<a class="btn">
+📄 Download Report
+</a>
+
+<a class="btn">
+📤 Export Orders
+</a>
+
+<a class="btn">
+🔄 Refresh Dashboard
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("orders").innerHTML="125";
+document.getElementById("customers").innerHTML="89";
+document.getElementById("pending").innerHTML="14";
+document.getElementById("completed").innerHTML="103";
+document.getElementById("cancelled").innerHTML="8";
+document.getElementById("today").innerHTML="6";
+
+</script>
+</div>
+
+<footer style="text-align:center;padding:25px;color:#666;">
+
+© 2026 QWALITY SCREEN PRINTING | Admin Dashboard
+
+</footer>
+
+</body>
+
+</html>
