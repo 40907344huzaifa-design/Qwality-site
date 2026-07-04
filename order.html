@@ -1,222 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
 <title>Place Order | QWALITY SCREEN PRINTING</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f4f8fb;
-color:#222;
+background:linear-gradient(135deg,#f5fbff,#eefdf9);
+color:#333;
 }
 
 header{
-background:linear-gradient(90deg,#00b894,#00aaff);
+background:linear-gradient(135deg,#00b894,#00a8ff);
 color:white;
-padding:25px;
+padding:35px 20px;
 text-align:center;
-box-shadow:0 3px 10px rgba(0,0,0,.15);
+box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
 header h1{
-font-size:32px;
+font-size:34px;
 }
 
 header p{
-margin-top:8px;
-font-size:16px;
+margin-top:10px;
+opacity:.95;
 }
 
 .container{
-max-width:850px;
-margin:35px auto;
+
+max-width:950px;
+margin:40px auto;
+padding:20px;
+
+}
+
+.card{
+
 background:white;
+border-radius:22px;
 padding:30px;
-border-radius:18px;
-box-shadow:0 8px 25px rgba(0,0,0,.12);
+box-shadow:0 10px 35px rgba(0,0,0,.12);
+
 }
 
-h2{
-text-align:center;
+.section{
+
+margin-bottom:35px;
+
+}
+
+.section h2{
+
 color:#00b894;
-margin-bottom:25px;
+margin-bottom:18px;
+padding-bottom:8px;
+border-bottom:2px solid #e8e8e8;
+
 }
 
-.row{
+.grid{
+
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:18px;
-}
 
-@media(max-width:700px){
-.row{
-grid-template-columns:1fr;
-}
 }
 
 label{
+
 display:block;
-font-weight:bold;
-margin-top:16px;
 margin-bottom:6px;
+font-weight:600;
+
 }
 
 input,
 select,
 textarea{
+
 width:100%;
-padding:12px;
-border:1px solid #ccc;
-border-radius:10px;
+padding:14px;
+border-radius:12px;
+border:1px solid #dcdcdc;
 font-size:15px;
-outline:none;
+transition:.25s;
+
 }
 
 input:focus,
 select:focus,
 textarea:focus{
+
+outline:none;
 border-color:#00b894;
+box-shadow:0 0 10px rgba(0,184,148,.15);
+
 }
 
 textarea{
-height:110px;
-resize:vertical;
-}
 
-.buttons{
-margin-top:25px;
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
+height:120px;
+resize:none;
 
-button{
-flex:1;
-padding:15px;
-border:none;
-border-radius:10px;
-font-size:17px;
-cursor:pointer;
-background:linear-gradient(90deg,#00b894,#00aaff);
-color:white;
-font-weight:bold;
-transition:.3s;
-}
-
-button:hover{
-transform:translateY(-2px);
-}
-
-.home{
-flex:1;
-text-align:center;
-padding:15px;
-border-radius:10px;
-background:#f0f0f0;
-text-decoration:none;
-color:#333;
-font-weight:bold;
-}
-
-footer{
-text-align:center;
-padding:25px;
-color:#666;
 }
 
 .required{
+
 color:red;
+
 }
+
+.radioGroup{
+
+display:flex;
+gap:18px;
+margin-top:8px;
+
+}
+
+.radioGroup label{
+
+font-weight:500;
+
+}
+
+.summary{
+
+margin-top:20px;
+background:#f8fbff;
+border-left:5px solid #00b894;
+padding:20px;
+border-radius:12px;
+
+}
+
+.summary h3{
+
+margin-bottom:12px;
+color:#00a8ff;
+
+}
+
+.buttons{
+
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:30px;
+
+}
+
+button{
+
+flex:1;
+padding:16px;
+font-size:17px;
+border:none;
+border-radius:14px;
+cursor:pointer;
+background:linear-gradient(135deg,#00b894,#00a8ff);
+color:white;
+font-weight:bold;
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+.home{
+
+flex:1;
+padding:16px;
+text-align:center;
+text-decoration:none;
+border-radius:14px;
+background:#ececec;
+color:#333;
+font-weight:bold;
+
+}
+
+.call{
+
+background:#00b894;
+color:white;
+
+}
+
+footer{
+
+text-align:center;
+padding:30px;
+color:#666;
+
+}
+
+@media(max-width:700px){
+
+.buttons{
+
+flex-direction:column;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <header>
+
 <h1>QWALITY SCREEN PRINTING</h1>
-<p>Professional Printing Order Form</p>
+
+<p>Professional Printing Order Portal</p>
+
 </header>
 
 <div class="container">
 
-<h2>Place Your Order</h2>
+<div class="card">
 
-<div class="row">
+<div class="section">
+
+<h2>Customer Details</h2>
+
+<div class="grid">
 
 <div>
+
 <label>Full Name <span class="required">*</span></label>
+
 <input id="name" type="text">
 
+</div>
+
+<div>
+
 <label>Mobile Number <span class="required">*</span></label>
+
 <input id="mobile" type="tel">
 
+</div>
+
+<div>
+
 <label>Email</label>
+
 <input id="email" type="email">
 
-<label>Service <span class="required">*</span></label>
+</div>
+
+<div>
+
+<label>Service</label>
+
 <select id="service">
+
 <option>Visiting Cards</option>
+
 <option>Banner</option>
+
 <option>Sticker</option>
+
 <option>Calendar</option>
+
 <option>Bill Book</option>
+
 <option>Catalogue</option>
+
 <option>Flex Printing</option>
+
 <option>Other</option>
+
 </select>
 
+</div>
+
+</div>
+
+</div>
+<div class="section">
+
+<h2>Printing Details</h2>
+
+<div class="grid">
+
+<div>
+
 <label>Quantity</label>
-<input id="qty" type="number">
+
+<input id="quantity" type="number" placeholder="Example: 500" oninput="updateSummary()">
+
+</div>
+
+<div>
 
 <label>Size</label>
-<input id="size" type="text">
+
+<input id="size" type="text" placeholder="Example: 3.5 x 2 inch">
+
 </div>
 
 <div>
 
 <label>Paper / Material</label>
-<input id="material" type="text">
+
+<select id="material">
+
+<option>300 GSM Art Card</option>
+<option>250 GSM Art Card</option>
+<option>Matt Card</option>
+<option>Gloss Card</option>
+<option>PVC Card</option>
+<option>Transparent Sticker</option>
+<option>Flex</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div>
 
 <label>Lamination</label>
+
 <select id="lamination">
+
 <option>None</option>
-<option>Matte</option>
+<option>Matt</option>
 <option>Gloss</option>
 <option>Velvet</option>
 <option>UV</option>
+
 </select>
+
+</div>
+
+<div>
+
+<label>Design Required?</label>
+
+<div class="radioGroup">
+
+<label>
+<input type="radio" name="design" value="Need Designing" checked>
+Need Designing
+</label>
+
+<label>
+<input type="radio" name="design" value="Design Ready">
+Design Ready
+</label>
+
+</div>
+
+</div>
+
+<div>
+
+<label>Urgency</label>
+
+<select id="urgency">
+
+<option>Standard</option>
+<option>Urgent (24 Hours)</option>
+<option>Same Day (If Available)</option>
+
+</select>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Delivery Details</h2>
+
+<div class="grid">
+
+<div>
 
 <label>Delivery Method</label>
+
 <select id="delivery">
+
 <option>Pickup</option>
 <option>Home Delivery</option>
+
 </select>
 
+</div>
+
+<div>
+
 <label>Required Date</label>
+
 <input id="date" type="date">
 
-<label>Delivery Address</label>
-<textarea id="address"></textarea>
+</div>
 
-<label>Additional Instructions</label>
-<textarea id="note"></textarea>
+</div>
+
+<label style="margin-top:20px;">Delivery Address</label>
+
+<textarea
+id="address"
+placeholder="Enter complete delivery address"></textarea>
+
+<label style="margin-top:20px;">Additional Instructions</label>
+
+<textarea
+id="note"
+placeholder="Any special instructions..."></textarea>
+
+</div>
+
+<div class="summary">
+
+<h3>Order Summary</h3>
+
+<p><strong>Service:</strong> <span id="sumService">Visiting Cards</span></p>
+
+<p><strong>Quantity:</strong> <span id="sumQty">0</span></p>
+
+<p><strong>Delivery:</strong> <span id="sumDelivery">Pickup</span></p>
+
+</div>
 <div class="buttons">
 
 <button type="button" onclick="sendOrder()">
 📋 Place Order on WhatsApp
 </button>
 
-<a class="home" href="index.html">
-⬅ Back to Home
+<a href="index.html" class="home">
+🏠 Back to Home
 </a>
+
+<a class="home call"
+href="tel:+919826707560">
+📞 Call Now
+</a>
+
+</div>
 
 </div>
 
@@ -230,22 +478,45 @@ color:red;
 
 <script>
 
+function updateSummary(){
+
+document.getElementById("sumService").innerHTML=
+document.getElementById("service").value;
+
+document.getElementById("sumQty").innerHTML=
+document.getElementById("quantity").value || "0";
+
+document.getElementById("sumDelivery").innerHTML=
+document.getElementById("delivery").value;
+
+}
+
+document.getElementById("service").addEventListener("change",updateSummary);
+document.getElementById("delivery").addEventListener("change",updateSummary);
+
 function sendOrder(){
 
 let name=document.getElementById("name").value.trim();
 let mobile=document.getElementById("mobile").value.trim();
 
-if(name==="" || mobile===""){
-alert("Please enter your Name and Mobile Number.");
+if(name=="" || mobile==""){
+
+alert("Please fill Name and Mobile Number.");
+
 return;
+
 }
 
 let email=document.getElementById("email").value;
 let service=document.getElementById("service").value;
-let qty=document.getElementById("qty").value;
+let quantity=document.getElementById("quantity").value;
 let size=document.getElementById("size").value;
 let material=document.getElementById("material").value;
 let lamination=document.getElementById("lamination").value;
+
+let design=document.querySelector('input[name="design"]:checked').value;
+
+let urgency=document.getElementById("urgency").value;
 let delivery=document.getElementById("delivery").value;
 let date=document.getElementById("date").value;
 let address=document.getElementById("address").value;
@@ -254,38 +525,67 @@ let note=document.getElementById("note").value;
 let message=
 `🟢 *NEW PRINT ORDER*
 
-👤 Name: ${name}
+━━━━━━━━━━━━━━
 
-📱 Mobile: ${mobile}
+👤 CUSTOMER
 
-📧 Email: ${email}
+Name : ${name}
 
-🖨️ Service: ${service}
+Mobile : ${mobile}
 
-🔢 Quantity: ${qty}
+Email : ${email}
 
-📏 Size: ${size}
+━━━━━━━━━━━━━━
 
-📄 Material: ${material}
+🖨️ PRINT DETAILS
 
-✨ Lamination: ${lamination}
+Service : ${service}
 
-🚚 Delivery: ${delivery}
+Quantity : ${quantity}
 
-📅 Required Date: ${date}
+Size : ${size}
 
-📍 Address:
+Material : ${material}
+
+Lamination : ${lamination}
+
+Design : ${design}
+
+Urgency : ${urgency}
+
+━━━━━━━━━━━━━━
+
+🚚 DELIVERY
+
+Method : ${delivery}
+
+Required Date : ${date}
+
+Address :
+
 ${address}
 
-📝 Instructions:
-${note}`;
+━━━━━━━━━━━━━━
 
-let whatsapp="https://wa.me/919826707560?text="+encodeURIComponent(message);
+📝 NOTES
 
-window.open(whatsapp,"_blank");
+${note}
+
+━━━━━━━━━━━━━━
+
+Thank You
+
+QWALITY SCREEN PRINTING`;
+
+let url="https://wa.me/919826707560?text="+encodeURIComponent(message);
+
+window.open(url,"_blank");
 
 }
+
+updateSummary();
 </script>
 
 </body>
+
 </html>
