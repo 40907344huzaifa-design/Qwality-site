@@ -14,82 +14,126 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#f5f7fb;
-color:#333;
+background:#f4f8fb;
+color:#222;
 }
 
 header{
-background:#00b894;
+background:linear-gradient(90deg,#00b894,#00aaff);
 color:white;
 padding:25px;
 text-align:center;
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+header h1{
+font-size:32px;
+}
+
+header p{
+margin-top:8px;
+font-size:16px;
 }
 
 .container{
-max-width:700px;
-margin:40px auto;
+max-width:850px;
+margin:35px auto;
 background:white;
 padding:30px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
 h2{
 text-align:center;
-margin-bottom:25px;
 color:#00b894;
+margin-bottom:25px;
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:18px;
+}
+
+@media(max-width:700px){
+.row{
+grid-template-columns:1fr;
+}
 }
 
 label{
 display:block;
-margin-top:15px;
 font-weight:bold;
+margin-top:16px;
+margin-bottom:6px;
 }
 
-input,select,textarea{
+input,
+select,
+textarea{
 width:100%;
 padding:12px;
-margin-top:6px;
 border:1px solid #ccc;
-border-radius:8px;
-font-size:16px;
+border-radius:10px;
+font-size:15px;
+outline:none;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+border-color:#00b894;
 }
 
 textarea{
+height:110px;
 resize:vertical;
-height:100px;
+}
+
+.buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+flex-wrap:wrap;
 }
 
 button{
-width:100%;
+flex:1;
 padding:15px;
-margin-top:25px;
-background:#00b894;
-color:white;
 border:none;
 border-radius:10px;
-font-size:18px;
+font-size:17px;
 cursor:pointer;
+background:linear-gradient(90deg,#00b894,#00aaff);
+color:white;
+font-weight:bold;
 transition:.3s;
 }
 
 button:hover{
-background:#00997a;
+transform:translateY(-2px);
 }
 
 .home{
-display:block;
+flex:1;
 text-align:center;
-margin-top:20px;
+padding:15px;
+border-radius:10px;
+background:#f0f0f0;
 text-decoration:none;
-color:#0984e3;
+color:#333;
 font-weight:bold;
 }
 
 footer{
 text-align:center;
-padding:20px;
+padding:25px;
 color:#666;
+}
+
+.required{
+color:red;
 }
 </style>
 </head>
@@ -98,84 +142,137 @@ color:#666;
 
 <header>
 <h1>QWALITY SCREEN PRINTING</h1>
-<p>Place Your Order</p>
+<p>Professional Printing Order Form</p>
 </header>
 
 <div class="container">
 
-<h2>Order Form</h2>
+<h2>Place Your Order</h2>
 
-<label>Full Name</label>
-<input type="text" id="name">
+<div class="row">
 
-<label>Mobile Number</label>
-<input type="tel" id="mobile">
+<div>
+<label>Full Name <span class="required">*</span></label>
+<input id="name" type="text">
 
-<label>Email (Optional)</label>
-<input type="email" id="email">
+<label>Mobile Number <span class="required">*</span></label>
+<input id="mobile" type="tel">
 
-<label>Select Service</label>
+<label>Email</label>
+<input id="email" type="email">
+
+<label>Service <span class="required">*</span></label>
 <select id="service">
 <option>Visiting Cards</option>
-<option>Banners</option>
-<option>Stickers</option>
-<option>Calendars</option>
-<option>Bill Books</option>
-<option>Catalogues</option>
+<option>Banner</option>
+<option>Sticker</option>
+<option>Calendar</option>
+<option>Bill Book</option>
+<option>Catalogue</option>
 <option>Flex Printing</option>
 <option>Other</option>
 </select>
 
 <label>Quantity</label>
-<input type="number" id="qty">
+<input id="qty" type="number">
 
 <label>Size</label>
-<input type="text" id="size" placeholder="Example: A4 / 3.5 x 2 inch">
+<input id="size" type="text">
+</div>
+
+<div>
 
 <label>Paper / Material</label>
-<input type="text" id="material">
+<input id="material" type="text">
+
+<label>Lamination</label>
+<select id="lamination">
+<option>None</option>
+<option>Matte</option>
+<option>Gloss</option>
+<option>Velvet</option>
+<option>UV</option>
+</select>
+
+<label>Delivery Method</label>
+<select id="delivery">
+<option>Pickup</option>
+<option>Home Delivery</option>
+</select>
+
+<label>Required Date</label>
+<input id="date" type="date">
 
 <label>Delivery Address</label>
 <textarea id="address"></textarea>
 
 <label>Additional Instructions</label>
 <textarea id="note"></textarea>
+<div class="buttons">
 
-<button onclick="sendOrder()">Place Order on WhatsApp</button>
+<button type="button" onclick="sendOrder()">
+📋 Place Order on WhatsApp
+</button>
 
-<a class="home" href="index.html">⬅ Back to Home</a>
+<a class="home" href="index.html">
+⬅ Back to Home
+</a>
+
+</div>
 
 </div>
 
 <footer>
+
 © 2026 QWALITY SCREEN PRINTING
+
 </footer>
 
 <script>
 
 function sendOrder(){
 
-const name = document.getElementById("name").value;
-const mobile = document.getElementById("mobile").value;
-const email = document.getElementById("email").value;
-const service = document.getElementById("service").value;
-const qty = document.getElementById("qty").value;
-const size = document.getElementById("size").value;
-const material = document.getElementById("material").value;
-const address = document.getElementById("address").value;
-const note = document.getElementById("note").value;
+let name=document.getElementById("name").value.trim();
+let mobile=document.getElementById("mobile").value.trim();
 
-const message =
+if(name==="" || mobile===""){
+alert("Please enter your Name and Mobile Number.");
+return;
+}
+
+let email=document.getElementById("email").value;
+let service=document.getElementById("service").value;
+let qty=document.getElementById("qty").value;
+let size=document.getElementById("size").value;
+let material=document.getElementById("material").value;
+let lamination=document.getElementById("lamination").value;
+let delivery=document.getElementById("delivery").value;
+let date=document.getElementById("date").value;
+let address=document.getElementById("address").value;
+let note=document.getElementById("note").value;
+
+let message=
 `🟢 *NEW PRINT ORDER*
 
 👤 Name: ${name}
+
 📱 Mobile: ${mobile}
+
 📧 Email: ${email}
 
 🖨️ Service: ${service}
+
 🔢 Quantity: ${qty}
+
 📏 Size: ${size}
+
 📄 Material: ${material}
+
+✨ Lamination: ${lamination}
+
+🚚 Delivery: ${delivery}
+
+📅 Required Date: ${date}
 
 📍 Address:
 ${address}
@@ -183,14 +280,11 @@ ${address}
 📝 Instructions:
 ${note}`;
 
-const url = "https://wa.me/919826707560?text=" + encodeURIComponent(message);
+let whatsapp="https://wa.me/919826707560?text="+encodeURIComponent(message);
 
-window.open(url, "_blank");
-
-}
+window.open(whatsapp,"_blank");
 
 }
-
 </script>
 
 </body>
