@@ -494,7 +494,7 @@ document.getElementById("delivery").value;
 document.getElementById("service").addEventListener("change",updateSummary);
 document.getElementById("delivery").addEventListener("change",updateSummary);
 
-function sendOrder(){
+async function sendOrder(){
 
 let name=document.getElementById("name").value.trim();
 let mobile=document.getElementById("mobile").value.trim();
@@ -522,9 +522,40 @@ let date=document.getElementById("date").value;
 let address=document.getElementById("address").value;
 let note=document.getElementById("note").value;
 
+const orderData={
+
+name,
+mobile,
+email,
+service,
+quantity,
+size,
+material,
+lamination,
+design,
+urgency,
+delivery,
+date,
+address,
+note
+
+};
+
+try{
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbzD11YVbHF4EtFcO4EWSktUAYTefcnM9VZyCZs2SwG4LIuVePOMBnzYgRZqnAtleWWA/exec",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(orderData)
+}
+);
+
 let message=
 `🟢 *NEW PRINT ORDER*
-
 ━━━━━━━━━━━━━━
 
 👤 CUSTOMER
@@ -577,9 +608,20 @@ Thank You
 
 QWALITY SCREEN PRINTING`;
 
-let url="https://wa.me/919826707560?text="+encodeURIComponent(message);
+let url =
+"https://wa.me/919826707560?text=" +
+encodeURIComponent(message);
 
 window.open(url,"_blank");
+alert("✅ Order submitted successfully!");
+
+}catch(error){
+
+console.error(error);
+
+alert("Order saved to WhatsApp, but there was an error saving to the database.");
+
+}
 
 }
 
